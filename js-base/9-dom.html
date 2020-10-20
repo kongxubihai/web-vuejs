@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" id="box">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="box1">
+            <li>吃饭</li>
+            <li id="box2">睡觉</li>
+            <li>打豆豆</li>
+        </ul>
+        <div>
+            表单元素: <input type="text" value="我是input" id="cur"></input>
+        </div>
+        <p id="memeda">普通非表单元素</p>
+        <div style="width:100px;height: 100px;color:blueviolet;border: 1px solid black;" id="testStyle">12306</div>
+    </body>    
+</html>
+<script>
+/* 
+前端三层：HTML结构层 CSS样式层 JS行为层
+JS组成： ECMAScript DOM文档对象模型 BOM浏览器对象模型
+*/
+
+/* DOM
+1.1、DOM系统内置引用类型对象documnet 整个节点树的根元素
+    4个属性：
+        documentElement： 可获取页面中的html标签
+        head: 可获取head标签
+        body: 可获取body标签
+        title: 可操作title标签文本
+ */
+ console.log(document);
+ console.log(typeof document);
+ console.log(document.documentElement);
+ console.log(document.head);
+ console.log(document.body);
+ console.log(document.title);
+
+ /* 1.2 DOM方法
+    getElementById: 通过ID选择器匹配任意节点树上的标签
+  */
+  var meta = document.getElementById("box");
+  console.log(meta);
+  var ul = document.getElementById("box1");
+  console.log(ul);
+  var li = document.getElementById("box");
+  console.log(li);
+  
+  /* 操作标签文本
+        1、表单元素 通过value属性操作文本 如input
+        2、非表单元素 通过innerHTML属性操作文本
+   */
+   var input = document.getElementById("cur");
+   console.log(input.value);
+   input.value="JS动态修改的";
+   var p = document.getElementById("memeda");
+   p.innerHTML="动态的innerHTML";
+
+   /* 1.3 操作属性 */
+   console.log(p.id);
+   console.log(p.className); //class通过className操作
+
+
+   /* 1.4 操作标签样式
+        <Link></Link> 外部样式
+        <Style></Style>内部样式
+        style="xxxxx=xxxx;" 行内样式
+        DOM只支持操作行内样式
+     */
+     var div = document.getElementById("testStyle");
+     //获取已有样式
+     console.log(div.style.width);
+     console.log(div.style.height);
+     console.log(div.style.color);
+     console.log(div.style.border);
+     //设置样式
+     div.style.width="200px"
+     //font-size等带横杠的变成小驼峰写法
+     div.style.fontSize="25px";
+
+     /* 事件
+        语法： element.onXXX = function){}
+     
+      */
+      div.onclick= function() {
+          // 随机数
+          var R =parseInt(Math.random() * 255);
+          var G =parseInt(Math.random() * 255);
+          var B =parseInt(Math.random() * 255);
+          div.style.backgroundColor=`rgb(${R},${G},${B})`;
+      }
+
+    /* 1.5 动态创建元素 */
+    //循环语句动态创建100个li
+    for(var i=0; i<100 ;i++){
+        var myli = document.createElement("li");
+        myli.innerHTML="动态打豆豆"  + i;
+        //追加子元素
+        ul.appendChild(myli);
+    }
+
+
+</script>

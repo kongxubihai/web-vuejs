@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航栏</title>
+    <!-- 浮动  靠左靠右来进行水平排列 一行放不下自动换行 -->
+    <style>
+        /* 清除默认样式：默认情况下有缝隙 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background-color: #01204f;
+        }
+        ul{
+            position: absolute;
+            left: 20%;
+            width: 80%;
+            height: 50px;
+            /* 清除列表默认样式 如小黑点 */
+            list-style: none;
+        }
+        li{
+            float: left;
+            width: 60px;
+            height: 50px;
+            color: white;
+            line-height: 50px;
+            cursor: pointer;
+            text-align: center;
+        }
+        li:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>首页</li>
+            <li>国内</li>
+            <li>国际</li>
+            <li>军事</li>
+            <li>财经</li>
+            <li>娱乐</li>
+            <li>体育</li>
+            <li>互联网</li>
+            <li>科技</li>
+            <li>游戏</li>
+            <li>女人</li>
+            <li>汽车</li>
+            <li>房产</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+
+    </body>    
+</html>
+<script>
+/* loop语句 for  while do while */
+//for
+for(var i=0; i<10; i++){
+    console.log('inner i: ' + i)
+}
+console.log('outer i: ' + i)
+//while
+console.log('while demo:  ')
+var j=10;
+var sum=0;
+while(j--){
+    sum+=j;
+}
+console.log('while sum: ' + sum)
+
+// do. while
+var k=10;
+var sum2=0;
+do{
+    sum2+=k;
+}while(k--)
+console.log(k, sum2)
+
+//break continue
+for(var index=0; index < 10 ; index++){
+    if (index % 3 == 0) continue;
+    console.log(index);
+}
+
+
+
+
+</script>

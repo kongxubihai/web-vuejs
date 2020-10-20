@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+
+    </body>    
+</html>
+<script>
+    /* 数组在JS当中是引用类型数据，在JS当中数组是用中括号表示 */
+    //1.1 数组引用类型 有序
+    console.log([]);
+    console.log(typeof []);
+    console.log([1,3,4,5]);
+    //1.2 增删查改
+    var arr = ['adddd', 12306, NaN, [1,2,3]];
+    console.log(arr[3]);
+    arr[0] = 'bbbb';
+    arr[3][0]=6666;
+    console.log(arr[3]);
+    arr[50]=50;
+    console.log(arr[30]);
+    arr[1][2]='new';
+    console.log(arr[1])
+
+    //1.3length属性
+    console.log(arr.length);
+    for(var i =0; i< arr.length; i++){
+        console.log(arr[i]);
+    }
+
+    /* 1.4 数组常用方法 https://www.w3school.com.cn/jsref/jsref_obj_array.asp  */
+    //pop push 结尾移除、添加元素
+    var p1 = arr.pop();
+    console.log(p1);
+    var len = arr.push('123', '456');
+    console.log(len);
+    //shift unshift 在头部移除一个 添加元素可多个
+    var s1=arr.shift();
+    console.log(s1);
+    var len2= arr.unshift('a', 'b');
+    console.log(len2);
+    //reverse反转
+    var arr2=[1,2,3];
+    console.log(arr2.reverse());
+    //indexOf 索引
+    console.log(arr2.indexOf(3));
+    console.log(arr2.indexOf(4));
+    //join将数组转换为字符串
+    console.log(arr2.join());//默认逗号连接
+    console.log(arr2.join('-'));
+    //concat合并多个数组
+    var a=[1,2,3];
+    var b=[4,5,6];
+    var c=[7,8,9];
+    console.log(a.concat(b,c))
+    console.log(a, b, c)
+    //slice切割数组(起始位置, 结束位置) 返回新数组 [) 含开始不含结束位置
+    arr = ["小浣熊", "麻花", "包子", "烤鸭", "棒棒糖"];
+    console.log(arr.slice(1));//默认到结尾
+    console.log(arr.slice(1,3));
+    console.log(arr.slice(-2));//支持反向索引
+    //splice切割数组(起始位置，长度) 
+    console.log('splice切割数组');
+    arr.splice(2,3); //用作切割
+    console.log(arr);
+    arr = ["小浣熊", "麻花", "包子", "烤鸭", "棒棒糖"];
+    arr.splice(2,0,'插入数据', '哈哈');//用作插入
+    console.log(arr);
+    arr = ["小浣熊", "麻花", "包子", "烤鸭", "棒棒糖"];
+    arr.splice(2,2,'插入数据', '哈哈');//用作替换
+    console.log(arr);
+
+
+
+
+
+
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>面向对象编程</title>
+    </head>
+    <body>
+
+    </body>    
+</html>
+<script>
+/* 面向对象编程     JS对象分狭义和广义对象  可通过点语法动态添加属性和方法 */
+/* 1、狭义对象 使用大括号{}表示，可拥有属性和方法 */
+var obj= {
+    name: '小米',
+    age: 19,
+    // 右侧值为函数称为方法 否则是属性
+    eat: function(){
+        console.log('8碗饭一顿');
+    }
+};
+console.log(typeof obj);
+console.log(obj.name);
+obj.eat();
+//重新赋值
+obj.name='小明';
+obj.eat = function (){console.log('7碗饭一顿好了');};
+//动态添加属性和方法
+obj.animal='狗';
+obj.beat= function () {console.log('咬人');};
+//读取
+console.log(obj.name);
+obj.beat();
+
+/* 2、广义对象： 如果是引用类型数据，且系统提供内置的属性和方法，称为广义对象
+        JS基本数据类型： Number String Boolean Undefined Null
+        引用类型：Object: 指函数、数组、正则、DOM、BOM
+ */
+//  2.1 广义对象-函数 系统提供内置属性和方法
+function People (a, b, c){};
+console.log(People.name);
+console.log(People.length);
+People.toString();
+//动态加属性和方法
+People.age=19;
+People.eat= function() {console.log('函数也是能有方法的');}
+console.log(People.age);
+People.eat();
+
+// 2.2 广义对象-数组
+var arr = ['吃饭', '睡觉', '打豆豆'];
+console.log(arr.length);
+console.log(arr.reverse());
+console.log(arr.join());
+//动态添加属性和方法
+arr.age=19;
+arr.eat= function() {console.log('数组也是能有方法的');}
+console.log(arr.age)
+arr.eat();
+
+/* 什么不是对象？ JS基本数据类型： Number String Boolean Undefined Null不是对象 */
+</script>

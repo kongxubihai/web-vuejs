@@ -1,0 +1,24 @@
+        /* 1、标签名选择器 */
+        div{
+            font-size: 16px;
+        }
+        /* 2、id选择器  id要求唯一 */
+        #box{
+            color: blue;
+        }
+        /* 3、class选择器 可重复 */
+        .class{
+            color: red;
+
+            /* 背景系列样式 */
+            width: 500px;
+            height: 500px;
+            /* 背景色 */
+            background-color: greenyellow;
+            /* 背景图 */
+            background-image: url(dog.jpg);
+            /* 背景图重复 */
+            background-repeat: no-repeat;
+            /* 简写 */
+            background: no-repeat url(dog.jpg) blueviolet;
+        }

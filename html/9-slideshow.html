@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <!-- 浮动  靠左靠右来进行水平排列 一行放不下自动换行 -->
+    <style>
+        /* 清除默认样式：默认情况下有缝隙 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            /* 相对定位 */
+            position: relative;
+            width: 520px;
+            height: 280px;
+            /* 外边框 */
+            border: 1px solid red;
+            left: 400px;
+            top: 100px;
+            /* 超出部分隐藏 */
+            overflow: hidden;
+        }
+        ul {
+            position: absolute;
+            list-style: none;
+            width: 520px;
+            height: 280px;
+        }
+        .leftbtn{
+            /* 绝对定位 */
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            background-color: black;
+            left: 0px;
+            top: 60px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            /* 透明 */
+            opacity: .8;
+        }
+        .rightbtn{
+            /* 绝对定位 */
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            background-color: black;
+            right: 0px;
+            top: 60px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            /* 透明 */
+            opacity: .8;
+        }
+        ol{
+            position: absolute;
+            width: 200px;
+            height: 25px;
+            left: 35%;
+            bottom: 5px;
+            list-style: none;
+        }
+        /* 后代选择器 */
+        ol li{
+            float: left;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 25px;
+            margin-left: 5px;
+        }
+        .cur{
+            background-color: skyblue;
+            /* 缩放 */
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 列表去做显示图片 -->
+        <ul>
+            <li><img src="dog.jpg" alt=""></li>
+            <li><img src="dog.jpg" alt=""></li>
+            <li><img src="dog.jpg" alt=""></li>
+            <li><img src="dog.jpg" alt=""></li>
+            <li><img src="dog.jpg" alt=""></li>
+        </ul>
+        <!-- 做左右按钮 -->
+        <div class="leftbtn">left</div>
+        <div class="rightbtn">right</div>
+        <!-- 分页器 -->
+        <ol>
+            <li class="cur">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+
+    </div>
+
+</body>
+
+</html>

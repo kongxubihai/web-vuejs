@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+
+    </body>    
+</html>
+<script>
+/* 函数 关键字function声明 表达式声明 */
+
+/*1.1 关键字形式函数分为声明+调用 */
+//声明
+function fun(){
+    console.log('函数调用');
+    console.log('函数调用');
+}
+//调用
+fun();
+fun();
+fun();
+/* 1.2形参和实参 */
+function fun2(a, b){
+    console.log(a + b);
+}
+fun2(10, 20);
+fun2('20', '29');
+/* 1.3全局变量和局部变量 函数体中的为局部变量仅限函数体中调用  
+    除局部变量外就是全局变量 任意地方调用 */
+function fun3(){
+    var part1=100;
+}
+if(66){
+    var part =10; 
+}
+console.log(part);//part为全局变量
+// console.log(part1);//访问不到 error not defined
+
+/* 1.4 作用域： 全局作用域  函数作用域：函数内 */
+console.log('全局作用域123');
+function fun4(a, b){
+    console.log(a, b);
+}
+fun4(5,6)
+
+/* 1.5 JS中没有函数重载的概念  多个重名 后者覆盖前者 */
+function fun5(a){
+    console.log('第一个')
+}
+function fun5(a, b){
+    console.log('第二个')
+}
+function fun5(a, b, c){
+    console.log('第三个')
+}
+fun5();//调用fun5(a, b, c)
+
+/* 1.6 return关键字 函数中使用返回值 */
+function mul(a, b){
+    return a*b;
+}
+var result=mul(5,6);
+console.log(result)
+
+
+</script>

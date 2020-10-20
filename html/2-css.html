@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>常用标签元素</title>
+    <!-- css层叠样式表 外部样式 内部样式 行内样式 -->
+    <!-- color【设置标签文字颜色】	        red、orange、yellow、green、cyan、blue、purple
+    font-size【标签文字大小尺寸设置】	Numberpx (数字最小12~)
+    background-color【背景颜色设置】	red、orange、yellow、green、cyan、blue、purple
+    text-align【文本对齐方式】	        left、center、right
+    font-style[字体样式]	            italic
+    Opacity【透明度设置】	            0~1【0：纯透明】
+    cursor	                            pointer【小手】 -->
+
+    <style>
+        /* 1、标签名选择器 */
+        div{
+            font-size: 16px;
+        }
+        /* 2、id选择器  id要求唯一 */
+        #box{
+            color: blue;
+        }
+        /* 3、class选择器 可重复 */
+        .class{
+            color: red;
+
+            /* 背景系列样式 */
+            width: 500px;
+            height: 500px;
+            /* 背景色 */
+            background-color: greenyellow;
+            /* 背景图 */
+            background-image: url(dog.jpg);
+            /* 背景图重复 */
+            background-repeat: no-repeat;
+            /* 简写 */
+            background: no-repeat url(dog.jpg) blueviolet;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="box" class="class">css选择我</div>
+</body>
+
+</html>

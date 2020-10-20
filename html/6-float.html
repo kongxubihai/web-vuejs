@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浮动</title>
+    <!-- 浮动  靠左靠右来进行水平排列 一行放不下自动换行 -->
+    <style>
+        /* 清除默认样式：默认情况下有缝隙 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 250px;
+            height: 50px;
+            background: cyan;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+            background: red;
+        }
+        .divider{
+            height: 50px;
+            width: 100%;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">看看浮动效果如何</div>
+    <div class="left">看看浮动效果如何</div>
+    <div class="left">看看浮动效果如何</div>
+    <div class="left">看看浮动效果如何</div>
+    <div class="left">看看浮动效果如何</div>
+
+    <div class="divider">下方是右对齐</div>
+
+    <div class="right">看看浮动效果如何</div>
+    <div class="right">看看浮动效果如何</div>
+    <div class="right">看看浮动效果如何</div>
+    <div class="right">看看浮动效果如何</div>
+    <div class="right">看看浮动效果如何</div>
+</body>
+
+</html>

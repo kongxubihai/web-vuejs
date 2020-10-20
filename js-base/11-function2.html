@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>函数中上下文this</title>
+        <style>
+            div{
+                width: 400px;
+                height: 200px;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+    </body>    
+</html>
+<script>
+/* 函数上下文this  取决于函数被如何调用和执行
+    1、函数+小括号；
+    2、函数作为事件处理函数执行
+    3、定时器回调函数执行
+    4、函数作为数组元素枚举出来执行
+    5、函数作为狭义对象方法执行
+ */
+
+//  1、函数+小括号；函数体中this为window BOM对象 浏览器对象
+function fun1() {console.log(this);};
+fun1();
+// 2、函数作为事件处理函数执行 this为触发事件的当前标签
+var div = document.getElementById("box");
+div.onclick= function(){
+    this.style.backgroundColor = 'red';
+}
+// 3、定时器回调函数执行 this为window
+setInterval(function() {console.log(this);}, 1500);
+
+// 4、函数作为数组元素枚举出来执行 this为当前数组
+var arr=[1,2,3,4,5, function(){console.log("函数里面的函数，我执行了。。。"); this.reverse()}, 6,7];
+//枚举出函数执行
+arr[5]();
+console.log(arr);
+
+// 5、函数作为狭义对象方法执行 this为方法的直接所属对象
+var obj= {
+    name: '饿百',
+    age: 10,
+    eat: function() {console.log(this.name +  ' eat eat eat .....')}
+}
+obj.eat();
+
+
+
+/* 构造函数
+    特征：
+        首字母一般需要大写
+        构造函数一定是一个关键字new调用的
+    类比： 构造函数就是所谓的类 new返回的狭义对象就是实例
+    注意： 构造函数也是一个函数 正常函数能做的都能做 如 循环 条件
+ */
+ function Dog(name, sex, age) {
+     //构造函数共4步
+    //  1、在函数体中神秘地创建一个空的狭义对象
+    // 2、函数的上下文执行当前的空狭义对象
+    // 3、通过点语法给狭义对象加属性和方法
+    this.name = name;
+    this.sex = sex;
+    this.age = age;
+    // 4、虽然没有没有关键字new 但是系统会将当前的狭义对象返回
+    for(var i=0; i< 10; i++){console.log(i);}
+    if (true) {
+        console.log(true);
+    }
+ }
+//  调用 new的时候常规的函数执行
+var erha = new Dog("二哈", "公", 3);
+var taidi= new Dog("泰日天", "母", 1);
+console.log(erha, taidi);
+console.log(erha.name);
+console.log(taidi.name);
+
+
+/* 原型 prototype */
+/* 
+    Dog构造函数一般称之为Dog类  erha taidi 一般称之为Dog的实例
+    任意构造函数天生都有一个propotype属性，指向一个空的狭义对象
+    实例天生拥有一个_proto_属性，向上面的狭义对象借用方法使用
+ */
+ Dog.prototype.beat= function() {
+     console.log("添加了咬人技能!")
+ };
+ //实例借用方法来使用
+ erha.beat();
+ erha.beat();
+
+</script>

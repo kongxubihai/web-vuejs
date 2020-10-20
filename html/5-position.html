@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定位</title>
+    <!-- 定位：    固定定位 相对定位 绝对定位 -->
+    <style>
+        /* 清除默认样式：默认情况下有缝隙 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 400px;
+            height: 200px;
+        }
+
+        body {
+            height: 10000px;
+        }
+
+        .box {
+            /* 固定定位 不占用起始位置 */
+            position: fixed;
+            left: 500px;
+            top: 200px;
+            background-color: red;
+        }
+
+        .box2 {
+            /* 相对定位 占用起始位置 相对起始偏离 */
+            background-color: purple;
+            position: relative;
+            left: 200px;
+            top: 100px;
+
+        }
+
+        .box1 {
+            background-color: yellow;
+        }
+
+        .box3 {
+            /* 绝对定位 无定位父元素 相对页面偏移 */
+            background-color: blue;
+            position: absolute;
+            right: 100px;
+            
+        }
+        .box4{
+            background-color: green;
+            position: relative;
+
+        }
+        .inner{
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            /* 绝对定位有父元素  相对父元素偏移 注意父元素要求是relative */
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">第一块fixed</div>
+    <div class="box1">第二块原始</div>
+    <div class="box2">第三块relative</div>
+    <div class="box3">第四块absolute    </div>
+    <div class="box4">第五块作为absolute的父元素
+        <div class="inner">相对父元素的绝对定位</div>
+    </div>
+    
+
+</body>
+
+</html>
